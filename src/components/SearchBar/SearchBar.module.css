@@ -1,0 +1,32 @@
+.SearchBarWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 3rem auto;
+}
+
+.InputFieldWrapper input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  line-height: normal;
+  font-size: 1.5rem;
+  color: #adadad;
+  border: none;
+  border-bottom: 2px solid #d6d6d6;
+  background: none;
+}
+
+.InputFieldWrapper input::placeholder {
+  color: #5f5f5f;
+  opacity: 1;
+  line-height: normal !important;
+}
+
+.InputFieldWrapper input:focus,
+.InputFieldWrapper input:active {
+  outline: none;
+}
