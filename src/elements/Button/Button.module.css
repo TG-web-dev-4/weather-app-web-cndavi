@@ -1,6 +1,6 @@
 .ButtonWrapper button {
   padding-top: 1rem;
-  color: #a0a0a0;
+  color: var(--color-gray);
   font-size: 1rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -10,7 +10,7 @@
 
 .ButtonWrapper button:hover {
   cursor: pointer;
-  color: #dddddd;
+  color: var(--color-white);
   transition: color 1s ease;
 }
 

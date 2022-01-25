@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Logo.module.css'
 
-const logo = (props) => {
+const logo = () => {
   return <h1 className={styles.Logo}>Weather Forecast</h1>
 }
 
