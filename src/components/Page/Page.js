@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import styles from './Page.module.css'
 import SearchBar from '../SearchBar/SearchBar'
 import Header from '../Header/Header'
@@ -6,11 +5,15 @@ import Card from '../../elements/Card/Card'
 import Preview from '../Preview/Preview'
 import WeatherDetails from '../WeatherDetails/WeatherDetails'
 import Footer from '../Footer/Footer'
-import { getWeatherData } from '../../actions/FetchWeather'
+import GetForecast from '../../actions/GetForecast'
+import SubmitRequest from '../../actions/SubmitRequest'
 
 const Page = () => {
-  const [query, setQuery] = useState('')
-  const [weather, setWeather] = useState({})
+  const { forecast } = GetForecast()
+
+  const onSubmit = (value) => {
+    SubmitRequest(value)
+  }
 
   let cardContent = <WeatherDetails />
 
@@ -18,7 +21,7 @@ const Page = () => {
     <div className={styles.PageWrapper}>
       <Header />
       <main className={styles.PageMain}>
-        <SearchBar />
+        <SearchBar submitSearch={onSubmit} />
         <Card>{cardContent}</Card>
       </main>
       <Footer />

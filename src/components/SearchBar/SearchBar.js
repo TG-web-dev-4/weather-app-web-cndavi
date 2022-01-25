@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import styles from './SearchBar.module.css'
 import Button from '../../elements/Button/Button'
+import PropTypes from 'prop-types'
 
-const SearchBar = ({ getData }) => {
+const SearchBar = ({ submitSearch }) => {
   const [location, setLocation] = useState('')
 
   const onSubmit = (event) => {
     event.preventDefault()
     if (!location || location === '') return
-    console.log({ location })
+    submitSearch(location)
   }
 
   return (
@@ -26,6 +27,10 @@ const SearchBar = ({ getData }) => {
       <Button type='submit' />
     </form>
   )
+}
+
+SearchBar.propTypes = {
+  submitSearch: PropTypes.func.isRequired,
 }
 
 export default SearchBar
