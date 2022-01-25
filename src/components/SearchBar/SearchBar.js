@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './SearchBar.module.css'
 import Button from '../../elements/Button/Button'
 
-const SearchBar = () => {
+const SearchBar = ({ getData }) => {
   const [location, setLocation] = useState('')
 
   const onSubmit = (event) => {

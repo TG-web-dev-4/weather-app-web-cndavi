@@ -1,30 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Page.module.css'
-import FetchWeather from '../../actions/FetchWeather'
 import SearchBar from '../SearchBar/SearchBar'
 import Header from '../Header/Header'
 import Card from '../../elements/Card/Card'
+import Preview from '../Preview/Preview'
+import WeatherDetails from '../WeatherDetails/WeatherDetails'
 import Footer from '../Footer/Footer'
+import { getWeatherData } from '../../actions/FetchWeather'
 
-const Page = ({ onSubmit }) => {
+const Page = () => {
   const [query, setQuery] = useState('')
   const [weather, setWeather] = useState({})
 
-  const search = async (event) => {
-    if (event.key == 'Enter' || onSubmit()) {
-      const data = await FetchWeather(query)
-      console.log(data)
-      setWeather(data)
-      setQuery('')
-    }
-  }
+  let cardContent = <WeatherDetails />
 
   return (
     <div className={styles.PageWrapper}>
       <Header />
       <main className={styles.PageMain}>
         <SearchBar />
-        <Card></Card>
+        <Card>{cardContent}</Card>
       </main>
       <Footer />
     </div>
