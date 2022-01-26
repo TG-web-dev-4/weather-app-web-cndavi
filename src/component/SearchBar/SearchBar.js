@@ -1,15 +1,16 @@
 import styles from './SearchBar.module.css'
 
 const SearchBar = (props) => {
-  const { setCity, fetchWeather } = props
+  const { setLocation, fetchWeather } = props
+
   return (
     <div className={styles.SearchBarWrapper}>
       <div className={styles.InputFieldWrapper}>
         <input
-          type='search'
+          type='text'
           placeholder='Search for location..'
           onChange={(e) => {
-            setCity(e.target.value)
+            setLocation(e.target.value)
           }}
         />
       </div>

@@ -8,17 +8,16 @@ import Card from '../../elements/Card/Card'
 import Footer from '../Footer/Footer'
 import WeatherDetails from '../WeatherDetails/WeatherDetails'
 
-const Api_Key = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY
 
 function App() {
-  const [city, setCity] = useState('')
-  const [weather, setWeather] = useState()
+  const [location, setLocation] = useState('')
+  const [weather, setWeather] = useState('')
 
-  //api Call
-  let GetData = () => {
+  let getData = () => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${Api_Key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`
       )
       .then((response) => {
         setWeather(response.data)
@@ -29,14 +28,14 @@ function App() {
   }
 
   useEffect(() => {
-    GetData()
+    getData()
   }, [])
 
   return (
     <div className={styles.PageWrapper}>
       <Header />
       <main className={styles.PageMain}>
-        <SearchBar setCity={setCity} fetchWeather={GetData} />
+        <SearchBar setLocation={setLocation} fetchWeather={getData} />
         <Card>
           {weather ? <WeatherDetails weather={weather} /> : <Preview />}
         </Card>

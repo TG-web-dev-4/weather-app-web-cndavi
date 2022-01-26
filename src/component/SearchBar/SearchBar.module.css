@@ -16,12 +16,12 @@
   font-size: 1.5rem;
   color: var(--color-gray);
   border: none;
-  border-bottom: 2px solid #d6d6d6;
+  border-bottom: 2px solid var(--color-white);
   background: none;
 }
 
 .InputFieldWrapper input::placeholder {
-  color: #5f5f5f;
+  color: var(--color-gray-medium);
   opacity: 1;
   line-height: normal !important;
 }
