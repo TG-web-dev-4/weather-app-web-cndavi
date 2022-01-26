@@ -1,4 +1,6 @@
-import Page from './components/Page/Page'
+import React from 'react'
+
+import Page from './component/Page/Page'
 
 const App = () => {
   return (
