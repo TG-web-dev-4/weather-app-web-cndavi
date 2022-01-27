@@ -1,0 +1,24 @@
+.ButtonWrapper button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color: var(--color-gray-dark);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--color-gray-dark);
+  background: var(--color-pink);
+  transition: all 500ms ease;
+  border-radius: 10px;
+}
+
+.ButtonWrapper button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.ButtonWrapper button:active,
+.ButtonWrapper button:focus {
+  outline: none;
+}
