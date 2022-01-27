@@ -32,19 +32,23 @@
 }
 
 .ButtonWrapper button {
-  padding-top: 1rem;
-  color: var(--color-gray);
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color: var(--color-gray-dark);
   font-size: 1rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  border: none;
-  background: none;
+  border: 1px solid var(--color-gray-dark);
+  background: var(--color-pink);
+  transition: all 500ms ease;
+  border-radius: 10px;
 }
 
 .ButtonWrapper button:hover {
   cursor: pointer;
-  color: var(--color-white);
-  transition: color 1s ease;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .ButtonWrapper button:active,

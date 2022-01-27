@@ -51,12 +51,6 @@
   margin: 2rem auto;
 }
 
-.DateWrapper {
-  color: var(--color-gray-dark);
-  font-size: 1rem;
-  letter-spacing: 1px;
-}
-
 .DescriptionWrapper {
   color: var(--color-gray-dark);
   font-size: 1.875rem;
@@ -77,3 +71,4 @@
 .TemperatureMode {
   font-size: 2rem;
 }
+

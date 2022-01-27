@@ -14,7 +14,7 @@
 
 @media only screen and (min-width: 600px) {
   .Card {
-    max-width: 472px;
-    max-height: 246px;
+    max-width: 700px;
+    max-height: 300px;
   }
 }
