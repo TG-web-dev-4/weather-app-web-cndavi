@@ -12,6 +12,7 @@ const api_key = process.env.REACT_APP_API_KEY
 class Page extends Component {
   state = {
     temperature: '',
+    description: '',
     city: 'London',
     country: 'UK',
     error: '',
@@ -28,6 +29,7 @@ class Page extends Component {
 
     this.setState({
       temperature: `${data.main.temp}`,
+      description: data.weather[0].main,
       city: data.name,
       country: data.sys.country,
       error: '',
@@ -41,13 +43,12 @@ class Page extends Component {
       cardContent = (
         <WeatherDetails
           temperature={this.state.temperature}
+          description={this.state.description}
           city={this.state.city}
           country={this.state.country}
         />
       )
     }
-
-    const { city, country } = this.state
 
     return (
       <div className={styles.PageWrapper}>

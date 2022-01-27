@@ -4,7 +4,13 @@ import Date from './Date/Date'
 const WeatherDetails = (props) => {
   return (
     <div className={styles.WeatherDetailsWrapper}>
-      <div className={styles.WeatherIconWrapper}></div>
+      <div className={styles.WeatherIconWrapper}>
+        <img
+          src={require(`../../assets/${props.description}.svg`)}
+          alt={props.description}
+          className={styles.Icon}
+        />
+      </div>
       <div className={styles.WeatherDataWrapper}>
         <div className={styles.TemperatureWrapper}>
           {props.temperature}
