@@ -1,0 +1,14 @@
+.CurrentInfo {
+  color: var(--color-gray-dark);
+}
+
+.CurrentInfo .CurrentLocation h1 {
+  font-size: 1.775rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 0.3rem;
+}
+
+.WeatherDescription {
+  letter-spacing: 1.5px;
+}

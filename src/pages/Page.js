@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import WeatherCurrent from '../components/WeatherCurrent/WeatherCurrent'
+import WeatherApp from '../components/WeatherApp/WeatherApp'
 import styles from './Page.module.css'
 import Header from '../components/Header/Header'
 import Form from '../components/Form/Form'
@@ -40,7 +40,7 @@ class Page extends Component {
 
     if (this.state.temperature !== '') {
       cardContent = (
-        <WeatherCurrent
+        <WeatherApp
           temperature={this.state.temperature}
           description={this.state.description}
           city={this.state.city}
@@ -50,13 +50,15 @@ class Page extends Component {
     }
 
     return (
-      <div className={styles.PageWrapper}>
-        <Header />
-        <main className={styles.PageMain}>
-          <Form weatherMethod={this.fetchWeather} />
-          <Card>{cardContent}</Card>
-        </main>
-      </div>
+      <>
+        <div className={styles.PageWrapper}>
+          <Header />
+          <main className={styles.PageMain}>
+            <Form weatherMethod={this.fetchWeather} />
+            <Card>{cardContent}</Card>
+          </main>
+        </div>
+      </>
     )
   }
 }

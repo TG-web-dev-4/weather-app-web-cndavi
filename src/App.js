@@ -4,9 +4,9 @@ import Page from './pages/Page'
 
 const App = () => {
   return (
-    <div>
+    <>
       <Page />
-    </div>
+    </>
   )
 }
 
