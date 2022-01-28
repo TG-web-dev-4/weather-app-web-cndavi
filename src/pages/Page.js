@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import WeatherDetails from '../components/WeatherDetails/WeatherDetails'
+import WeatherCurrent from '../components/WeatherCurrent/WeatherCurrent'
 import styles from './Page.module.css'
 import Header from '../components/Header/Header'
 import Form from '../components/Form/Form'
 import Card from '../elements/Card/Card'
 import Preview from '../components/Preview/Preview'
-import Footer from '../components/Footer/Footer'
 
 const api_key = process.env.REACT_APP_API_KEY
 
@@ -41,7 +40,7 @@ class Page extends Component {
 
     if (this.state.temperature !== '') {
       cardContent = (
-        <WeatherDetails
+        <WeatherCurrent
           temperature={this.state.temperature}
           description={this.state.description}
           city={this.state.city}
@@ -57,7 +56,6 @@ class Page extends Component {
           <Form weatherMethod={this.fetchWeather} />
           <Card>{cardContent}</Card>
         </main>
-        <Footer />
       </div>
     )
   }

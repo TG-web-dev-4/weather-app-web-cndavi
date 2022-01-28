@@ -1,7 +1,7 @@
-import styles from './WeatherDetails.module.css'
+import styles from './WeatherCurrent.module.css'
 import Date from './Date/Date'
 
-const WeatherDetails = (props) => {
+const WeatherCurrent = (props) => {
   return (
     <div className={styles.WeatherDetailsWrapper}>
       <div className={styles.WeatherIconWrapper}>
@@ -25,4 +25,4 @@ const WeatherDetails = (props) => {
   )
 }
 
-export default WeatherDetails
+export default WeatherCurrent
