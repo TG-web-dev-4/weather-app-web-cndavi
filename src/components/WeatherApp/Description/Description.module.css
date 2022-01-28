@@ -1,14 +1,14 @@
-.CurrentInfo {
+.DescriptionWrapper {
   color: var(--color-gray-dark);
-}
-
-.CurrentInfo .CurrentLocation h1 {
-  font-size: 1.775rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  margin-bottom: 0.3rem;
-}
-
-.WeatherDescription {
   letter-spacing: 1.5px;
+  margin: 0.5rem 0;
+}
+
+.DescriptionWrapper h2 {
+  font-size: 1.775rem;
+  font-weight: 400;
+}
+
+.DescriptionWrapper span {
+  padding-top: 3rem;
 }

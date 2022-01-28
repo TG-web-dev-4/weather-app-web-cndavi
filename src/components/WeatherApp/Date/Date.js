@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react'
+import dateformat from 'dateformat'
+import styles from './Date.module.css'
 
-import dateformat from 'dateformat';
+const date = () => {
+  const today = new Date()
 
-import styles from './Date.module.css';
-
-const date = (props) => {
-    const today = new Date();
-    return(
-        <div className={styles.DateWrapper}>
-            {dateformat(today, "dddd, mmmm dd")} 
-        </div>
-    );
+  return (
+    <div className={styles.DateWrapper}>
+      {dateformat(today, 'dddd, mmmm dd')}
+    </div>
+  )
 }
 
-export default date;
+export default date

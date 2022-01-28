@@ -15,7 +15,7 @@
 }
 
 .InputFieldWrapper input::placeholder {
-  color: var(--color-gray-dark);
+  color: #686868;
   opacity: 1;
   line-height: normal !important;
 }

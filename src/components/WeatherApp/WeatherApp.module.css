@@ -4,7 +4,6 @@
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
   animation: fadein 2s;
-  max-width: 250px;
 }
 
 @keyframes fadein {

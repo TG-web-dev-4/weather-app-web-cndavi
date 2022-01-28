@@ -5,6 +5,7 @@ import Header from '../components/Header/Header'
 import Form from '../components/Form/Form'
 import Card from '../elements/Card/Card'
 import Preview from '../components/Preview/Preview'
+import Footer from '../components/Footer/Footer'
 
 const api_key = process.env.REACT_APP_API_KEY
 
@@ -12,8 +13,8 @@ class Page extends Component {
   state = {
     temperature: '',
     description: '',
-    city: 'London',
-    country: 'UK',
+    city: '',
+    country: '',
     error: '',
   }
 
@@ -57,6 +58,7 @@ class Page extends Component {
             <Form weatherMethod={this.fetchWeather} />
             <Card>{cardContent}</Card>
           </main>
+          <Footer />
         </div>
       </>
     )

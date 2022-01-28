@@ -1,9 +1,9 @@
 .TemperatureWrapper {
   color: #333333;
-  font-size: 2.75rem;
+  font-size: 1.75rem;
   margin: 0.5rem 0;
 }
 
 .TemperatureWrapper .TemperatureSymbol {
-  font-size: 2.125rem;
+  font-size: 1.125rem;
 }

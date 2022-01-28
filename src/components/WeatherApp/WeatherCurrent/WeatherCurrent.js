@@ -1,17 +1,20 @@
 import styles from './WeatherCurrent.module.css'
+import Icon from '../../../elements/Icon/Icon'
 import Temperature from '../Temperature/Temperature'
+import Description from '../Description/Description'
+import Date from '../Date/Date'
 
 const WeatherCurrent = (props) => {
+  const { city, country, description } = props
+
   return (
     <div className={styles.WeatherDetailsWrapper}>
       <div className={styles.WeatherIconWrapper}>
-        <img
-          src={require(`../../../assets/${props.description}.svg`)}
-          alt={props.description}
-          className={styles.Icon}
-        />
+        <Icon description={description} />
       </div>
       <div className={styles.WeatherDataWrapper}>
+        <Description city={city} country={country} description={description} />
+        <Date />
         <Temperature temperature={props.temperature} />
       </div>
     </div>
