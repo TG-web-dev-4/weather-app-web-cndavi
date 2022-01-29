@@ -1,17 +1,10 @@
 import React from 'react'
 import styles from './Button.module.css'
 
-const Button = (props) => {
+const Button = () => {
   return (
     <div className={styles.ButtonWrapper}>
-      <button
-        className={styles.Button}
-        type={props.type}
-        name={props.name}
-        onClick={props.clicked}
-      >
-        {props.children}
-      </button>
+      <button>Submit</button>
     </div>
   )
 }

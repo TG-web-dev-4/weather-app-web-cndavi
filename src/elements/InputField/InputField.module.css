@@ -1,14 +1,21 @@
 .InputFieldWrapper input {
-  border: #f0a62e solid 1px;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  line-height: normal;
+  font-size: 1.375rem;
+  color: var(--color-gray);
+  border: none;
+  border-bottom: 2px solid var(--color-white);
+  background: none;
+  letter-spacing: 1px;
 }
 
 .InputFieldWrapper input::placeholder {
-  color: #adadad;
+  color: #686868;
   opacity: 1;
   line-height: normal !important;
 }
@@ -16,17 +23,4 @@
 .InputFieldWrapper input:focus,
 .InputFieldWrapper input:active {
   outline: none;
-}
-
-.InputFieldWrapper label {
-  color: #606060;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: +0.5px;
-}
-
-@media only screen and (min-width: 600px) {
-  .InputFieldWrapper input {
-    margin-right: 1rem;
-  }
 }

@@ -1,9 +1,8 @@
-.WeatherCard {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  padding: 2rem;
+.WeatherApp {
+  border-radius: 10px;
+  color: white;
   -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
   animation: fadein 2s;
 }
 
@@ -16,7 +15,7 @@
   }
 }
 
-@-webkit-keyframes fadein {
+@-moz-keyframes fadein {
   from {
     opacity: 0;
   }
@@ -26,7 +25,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .WeatherCard {
-    width: 60%;
+  .WeatherApp {
+    position: relative;
   }
 }

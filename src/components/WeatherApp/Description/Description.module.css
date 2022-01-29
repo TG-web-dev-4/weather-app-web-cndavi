@@ -1,3 +1,14 @@
 .DescriptionWrapper {
-  text-transform: capitalize;
+  color: var(--color-gray-dark);
+  letter-spacing: 1.5px;
+  margin: 0.5rem 0;
+}
+
+.DescriptionWrapper h2 {
+  font-size: 1.775rem;
+  font-weight: 400;
+}
+
+.DescriptionWrapper span {
+  padding-top: 3rem;
 }

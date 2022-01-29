@@ -1,16 +1,14 @@
 import React from 'react'
 import styles from './InputField.module.css'
 
-const InputField = (props) => {
+const InputField = () => {
   return (
     <div className={styles.InputFieldWrapper}>
       <input
-        type={props.type}
-        id={props.name}
-        name={props.name}
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={props.handleChange}
+        type='text'
+        name='city'
+        required
+        placeholder='Search for a location'
       />
     </div>
   )
