@@ -1,8 +1,4 @@
-.WeatherCard {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  padding: 2rem;
+.ErrorNoticeWrapper {
   -webkit-animation: fadein 2s;
   animation: fadein 2s;
 }
@@ -22,11 +18,5 @@
   }
   to {
     opacity: 1;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .WeatherCard {
-    width: 60%;
   }
 }

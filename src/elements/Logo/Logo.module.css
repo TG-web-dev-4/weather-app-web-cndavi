@@ -4,8 +4,9 @@
   line-height: 100%;
   text-transform: uppercase;
   font-weight: normal;
-  letter-spacing: 2px;
+  letter-spacing: +2px;
   white-space: nowrap;
+  color: white;
 }
 
 .Logo:hover {
