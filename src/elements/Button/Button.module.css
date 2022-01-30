@@ -1,25 +1,23 @@
-.ButtonWrapper button {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  color: var(--color-gray-dark);
-  font-size: 0.875rem;
-  letter-spacing: 0.5px;
+.Button {
+  background-color: var(--color-yellow);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
   text-transform: uppercase;
-  border: 1px solid var(--color-gray-dark);
-  background: var(--color-yellow);
-  transition: all 500ms ease;
-  border-radius: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
   box-shadow: var(--secondary-box-shadow);
+  transition: all 500ms ease;
 }
 
-.ButtonWrapper button:hover {
+.Button:hover {
   cursor: pointer;
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
 
-.ButtonWrapper button:active,
-.ButtonWrapper button:focus {
+.Button:active,
+.Button:focus {
   outline: none;
 }

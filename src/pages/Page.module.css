@@ -1,16 +1,8 @@
 .PageWrapper {
-  margin: 0;
-  padding: 0;
-}
-
-.PageMain {
-  height: 640px;
-  margin: 0;
-  padding: 0.5rem 1.5rem;
-}
-
-@media only screen and (min-width: 600px) {
-  .PageMain {
-    height: 460px;
-  }
+  width: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

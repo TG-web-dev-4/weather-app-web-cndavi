@@ -3,9 +3,10 @@
   font-size: 1.1rem;
   line-height: 100%;
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 300;
   letter-spacing: 2px;
   white-space: nowrap;
+  color: var(--color-white);
 }
 
 .Logo:hover {

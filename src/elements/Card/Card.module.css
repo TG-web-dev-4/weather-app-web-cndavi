@@ -1,20 +1,14 @@
-.Card {
+.CardWrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: var(--color-gray);
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  max-height: 700px;
+  justify-content: center;
   margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: var(--main-box-shadow);
-}
-
-@media only screen and (min-width: 600px) {
-  .Card {
-    max-width: 472px;
-    max-height: 246px;
-  }
+  background-color: var(--bg-color--card);
+  color: var(--main-text-color);
+  width: 85%;
+  max-width: 475px;
+  min-height: 450px;
+  margin-top: 3rem;
 }
