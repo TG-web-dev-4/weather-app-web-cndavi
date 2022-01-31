@@ -1,0 +1,6 @@
+.CardWrapper {
+  border-radius: 15px;
+  box-shadow: var(--main-box-shadow);
+  background-color: var(--bg-color--card);
+  color: var(--main-text-color);
+}

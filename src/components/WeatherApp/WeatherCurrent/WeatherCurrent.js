@@ -1,8 +1,8 @@
 import styles from './WeatherCurrent.module.css'
-import Icon from '../../../elements/Icon/Icon'
 import Temperature from '../Temperature/Temperature'
 import Description from '../Description/Description'
 import Date from '../Date/Date'
+import Icon from '../../../elements/Icon/Icon'
 
 const WeatherCurrent = (props) => {
   const { city, country, description } = props

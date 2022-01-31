@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import WeatherApp from '../components/WeatherApp/WeatherApp'
 import styles from './Page.module.css'
 import Header from '../components/Header/Header'
 import SearchBar from '../components/SearchBar/SearchBar'
 import Image from '../elements/Image/Image'
-import Card from '../elements/Card/Card'
+import WeatherCurrent from '../components/WeatherApp/WeatherCurrent/WeatherCurrent'
+import WeatherCurrentCard from '../elements/Cards/WeatherCurrentCard/WeatherCurrentCard'
+import WeatherForecastCard from '../elements/Cards/WeatherForecastCard/WeatherForecastCard'
 import Preview from '../components/Preview/Preview'
-import Footer from '../components/Footer/Footer'
 import ErrorNotice from '../components/ErrorNotice/ErrorNotice'
 
 class Page extends Component {
@@ -84,12 +84,12 @@ class Page extends Component {
   }
 
   render() {
-    let cardContent = <Preview />
+    let currentWeather = <Preview />
     if (this.state.error) {
-      cardContent = <ErrorNotice onClickHandler={this.tryAgainHandler} />
+      currentWeather = <ErrorNotice onClickHandler={this.tryAgainHandler} />
     } else if (this.state.temperature !== '') {
-      cardContent = (
-        <WeatherApp
+      currentWeather = (
+        <WeatherCurrent
           temperature={this.state.temperature}
           description={this.state.description}
           city={this.state.city}
@@ -107,13 +107,11 @@ class Page extends Component {
           onChangeHandler={this.searchBarHandler}
           error={this.state.error}
         />
-
         <div className={styles.PageWrapper}>
-          <Card>{cardContent}</Card>
-
+          <WeatherCurrentCard>{currentWeather}</WeatherCurrentCard>
           <Image />
+          <WeatherForecastCard>{}</WeatherForecastCard>
         </div>
-        {/* <Footer /> */}
       </>
     )
   }

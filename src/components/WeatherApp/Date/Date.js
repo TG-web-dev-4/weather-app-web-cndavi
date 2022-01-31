@@ -1,4 +1,3 @@
-import React from 'react'
 import dateformat from 'dateformat'
 import styles from './Date.module.css'
 

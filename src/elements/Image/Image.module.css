@@ -1,3 +1,7 @@
+.ImageWrapper {
+  margin: 0;
+}
+
 .Image {
   width: 20rem;
 }
