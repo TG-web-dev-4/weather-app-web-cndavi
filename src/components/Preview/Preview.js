@@ -1,6 +1,6 @@
 import styles from './Preview.module.css'
 
-const Preview = () => {
+const Preview = (props) => {
   return <></>
 }
 

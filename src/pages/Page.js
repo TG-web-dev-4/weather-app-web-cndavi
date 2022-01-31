@@ -4,6 +4,7 @@ import Header from '../components/Header/Header'
 import SearchBar from '../components/SearchBar/SearchBar'
 import Image from '../elements/Image/Image'
 import WeatherCurrent from '../components/WeatherApp/WeatherCurrent/WeatherCurrent'
+import WeatherForecast from '../components/WeatherApp/WeatherForecast/WeatherForecast'
 import WeatherCurrentCard from '../elements/Cards/WeatherCurrentCard/WeatherCurrentCard'
 import WeatherForecastCard from '../elements/Cards/WeatherForecastCard/WeatherForecastCard'
 import Preview from '../components/Preview/Preview'
@@ -98,6 +99,15 @@ class Page extends Component {
       )
     }
 
+    let forecastWeather = (
+      <WeatherForecast
+        temperature={this.state.temperature}
+        description={this.state.description}
+        city={this.state.city}
+        country={this.state.country}
+      />
+    )
+
     return (
       <>
         <Header />
@@ -108,9 +118,9 @@ class Page extends Component {
           error={this.state.error}
         />
         <div className={styles.PageWrapper}>
-          <WeatherCurrentCard>{currentWeather}</WeatherCurrentCard>
           <Image />
-          <WeatherForecastCard>{}</WeatherForecastCard>
+          <WeatherCurrentCard>{currentWeather}</WeatherCurrentCard>
+          <WeatherForecastCard>{forecastWeather}</WeatherForecastCard>
         </div>
       </>
     )

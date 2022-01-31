@@ -4,3 +4,10 @@
   background-color: var(--bg-color--card);
   color: var(--main-text-color);
 }
+
+@media only screen and (min-width: 600px) {
+  .CardWrapper {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
