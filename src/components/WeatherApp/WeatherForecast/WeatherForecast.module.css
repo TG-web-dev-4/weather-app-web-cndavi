@@ -1,3 +1,22 @@
-.WeatherForecastDetailsWrapper {
-  margin: 10px 0px;
+.ForecastWrapper {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.ForecastItem {
+  color: var(--color-white);
+  min-width: 90px;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Icon {
+  width: 3.875rem;
+}
+
+hr {
+  color: var(--color-gray);
+  width: 100%;
 }

@@ -7,3 +7,13 @@
 .Image {
   width: 20rem;
 }
+
+@media only screen and (min-width: 800px) {
+  .Image {
+    width: 30rem;
+  }
+
+  .ImageWrapper {
+    top: 42px;
+  }
+}

@@ -4,8 +4,8 @@
   border-radius: 10px;
   font-size: 0.8rem;
   letter-spacing: 0.5px;
-  margin-bottom: 1rem;
   box-shadow: var(--secondary-box-shadow);
+  margin-bottom: 1rem;
 }
 
 .InputFieldWrapper input::placeholder {

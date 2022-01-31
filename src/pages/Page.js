@@ -9,6 +9,7 @@ import WeatherCurrentCard from '../elements/Cards/WeatherCurrentCard/WeatherCurr
 import WeatherForecastCard from '../elements/Cards/WeatherForecastCard/WeatherForecastCard'
 import Preview from '../components/Preview/Preview'
 import ErrorNotice from '../components/ErrorNotice/ErrorNotice'
+import Footer from '../components/Footer/Footer'
 
 class Page extends Component {
   state = {
@@ -99,7 +100,7 @@ class Page extends Component {
       )
     }
 
-    let forecastWeather = (
+    const forecastWeather = (
       <WeatherForecast
         temperature={this.state.temperature}
         description={this.state.description}
@@ -122,6 +123,7 @@ class Page extends Component {
           <WeatherCurrentCard>{currentWeather}</WeatherCurrentCard>
           <WeatherForecastCard>{forecastWeather}</WeatherForecastCard>
         </div>
+        <Footer />
       </>
     )
   }
