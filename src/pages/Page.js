@@ -44,45 +44,33 @@ class Page extends Component {
     event.preventDefault()
     const city = event.target.elements.city.value
     const api_key = process.env.REACT_APP_WEATHER_API_KEY
-    const api_url = 'https://api.openweathermap.org/data/2.5/weather'
-    const url = api_url + `?q=${city}&appid=${api_key}&units=metric`
+    const weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`
 
-    this.setState(
-      {
-        temperature: '',
-        description: '',
-        predictability: '',
-        city: '',
-        country: '',
-        loading: true,
-        error: false,
-      },
-      () => {
-        fetch(url)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.cod === 200) {
-              this.setState({
-                temperature: data.main.temp,
-                main: data.weather[0].description,
-                description: data.weather[0].description,
-                predictability: data.predictability,
-                city: data.name,
-                country: data.sys.country,
-              })
-              console.log(data)
-            } else {
-              throw data.cod
-            }
-          })
-          .catch((err) => {
-            console.log(err)
+    this.setState(() => {
+      fetch(weather_url)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.cod === 200) {
             this.setState({
-              error: true,
+              temperature: data.main.temp,
+              main: data.weather[0].description,
+              description: data.weather[0].description,
+              predictability: data.predictability,
+              city: data.name,
+              country: data.sys.country,
             })
+            console.log(data)
+          } else {
+            throw data.cod
+          }
+        })
+        .catch((err) => {
+          console.log(err)
+          this.setState({
+            error: true,
           })
-      }
-    )
+        })
+    })
   }
 
   render() {
@@ -100,14 +88,19 @@ class Page extends Component {
       )
     }
 
-    const forecastWeather = (
-      <WeatherForecast
-        temperature={this.state.temperature}
-        description={this.state.description}
-        city={this.state.city}
-        country={this.state.country}
-      />
-    )
+    let forecastWeather = <Preview />
+    if (this.state.error) {
+      forecastWeather = <ErrorNotice onClickHandler={this.tryAgainHandler} />
+    } else if (this.state.temperature !== '') {
+      forecastWeather = (
+        <WeatherForecast
+          temperature={this.state.temperature}
+          description={this.state.description}
+          city={this.state.city}
+          country={this.state.country}
+        />
+      )
+    }
 
     return (
       <>

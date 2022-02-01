@@ -8,12 +8,12 @@
   width: 20rem;
 }
 
-@media only screen and (min-width: 800px) {
-  .Image {
-    width: 30rem;
+@media only screen and (min-width: 700px) {
+  .ImageWrapper {
+    top: 10px;
   }
 
-  .ImageWrapper {
-    top: 42px;
+  .Image {
+    width: 25rem;
   }
 }
