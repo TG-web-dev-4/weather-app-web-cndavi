@@ -4,7 +4,7 @@ const Image = () => {
   return (
     <div className={styles.ImageWrapper}>
       <img
-        src={require('../../assets/preview.svg').default}
+        src={require('../../assets/Preview.svg').default}
         alt='Weather App Icon'
         className={styles.Image}
       />

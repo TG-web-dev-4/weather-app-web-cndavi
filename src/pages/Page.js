@@ -19,6 +19,8 @@ class Page extends Component {
     predictability: '',
     city: '',
     country: '',
+    longitude: '',
+    latitude: '',
     error: false,
   }
 
@@ -36,6 +38,8 @@ class Page extends Component {
       predictability: '',
       city: '',
       country: '',
+      longitude: '',
+      latitude: '',
       error: false,
     })
   }
@@ -44,33 +48,47 @@ class Page extends Component {
     event.preventDefault()
     const city = event.target.elements.city.value
     const api_key = process.env.REACT_APP_WEATHER_API_KEY
-    const weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`
 
-    this.setState(() => {
-      fetch(weather_url)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.cod === 200) {
-            this.setState({
-              temperature: data.main.temp,
-              main: data.weather[0].description,
-              description: data.weather[0].description,
-              predictability: data.predictability,
-              city: data.name,
-              country: data.sys.country,
-            })
-            console.log(data)
-          } else {
-            throw data.cod
-          }
-        })
-        .catch((err) => {
-          console.log(err)
-          this.setState({
-            error: true,
+    this.setState(
+      {
+        temperature: '',
+        description: '',
+        predictability: '',
+        city: '',
+        country: '',
+        longitude: '',
+        latitude: '',
+        error: false,
+      },
+      () => {
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.cod === 200) {
+              this.setState({
+                temperature: data.main.temp,
+                main: data.weather[0].description,
+                description: data.weather[0].description,
+                predictability: data.predictability,
+                city: data.name,
+                country: data.sys.country,
+                longitude: data.coord.lon,
+                latitude: data.coord.lat,
+              })
+              // console.log(data)
+            } else {
+              throw data.cod
+            }
           })
-        })
-    })
+          .catch((error) => {
+            console.log(error)
+            this.setState({
+              error: true,
+            })
+          })
+      }
+    )
   }
 
   render() {
@@ -98,6 +116,8 @@ class Page extends Component {
           description={this.state.description}
           city={this.state.city}
           country={this.state.country}
+          latitude={this.state.latitude}
+          longitude={this.state.longitude}
         />
       )
     }

@@ -1,87 +1,27 @@
 import { useEffect, useState } from 'react'
 import styles from './WeatherForecast.module.css'
 
-const days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-]
+function WeatherForecast({ latitude, longitude }) {
+  const [forecastData, setForecastData] = useState([])
+  const api_key = process.env.REACT_APP_WEATHER_API_KEY
 
-function WeatherForecast(props) {
+  useEffect(() => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&appid=${api_key}&units=metric`
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setForecastData(result)
+        // console.log(result)
+      })
+  }, [latitude, longitude])
+
+  console.log(forecastData)
+
   return (
-    <div className={styles.ForecastWrapper} id='weatherForecast'>
+    <div className={styles.ForecastWrapper}>
       <div className={styles.ForecastItem}>
         <div className={styles.Day}>Monday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
-      <hr />
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Teusday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
-      <hr />
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Wednesday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
-      <hr />
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Thursday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
-      <hr />
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Friday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
-      <hr />
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Saturday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
-      <hr />
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Sunday</div>
         <img
           src={require(`../../../assets/clear sky.svg`).default}
           className={styles.Icon}

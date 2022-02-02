@@ -8,6 +8,7 @@
   letter-spacing: 0.5px;
   box-shadow: var(--secondary-box-shadow);
   transition: all 500ms ease;
+  margin-top: 1rem;
 }
 
 .Button:hover {
