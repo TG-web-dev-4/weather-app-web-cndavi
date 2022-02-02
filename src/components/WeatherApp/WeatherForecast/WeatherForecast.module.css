@@ -9,6 +9,7 @@
 
 .Day {
   letter-spacing: 1.5px;
+  font-size: 1.25rem;
 }
 
 .ForecastItem {
@@ -22,6 +23,14 @@
 .Icon {
   width: 5.875rem;
   margin: 0 auto;
+}
+
+.Temperature {
+  font-size: 1.45rem;
+}
+
+.TemperatureSymbol {
+  font-size: 1.25rem;
 }
 
 hr {

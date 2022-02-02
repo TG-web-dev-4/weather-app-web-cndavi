@@ -39,7 +39,8 @@ function WeatherForecast(props) {
               </div>
               <span className={styles.Day}>{weeklyDays[dayCounter]}</span>
               <div className={styles.Temperature}>
-                <span>{Math.round(data.temp.day)}&deg;C &nbsp;</span>
+                {Math.round(data.temp.day)}
+                <span className={styles.TemperatureSymbol}>&deg;C &nbsp;</span>
               </div>
               <div className={styles.Description}>
                 {data.weather[0].description}
