@@ -4,6 +4,11 @@
   flex-direction: column;
   -webkit-animation: fadein 2s;
   animation: fadein 2s;
+  text-transform: capitalize;
+}
+
+.Day {
+  letter-spacing: 1.5px;
 }
 
 .ForecastItem {
@@ -15,7 +20,8 @@
 }
 
 .Icon {
-  width: 3.875rem;
+  width: 5.875rem;
+  margin: 0 auto;
 }
 
 hr {

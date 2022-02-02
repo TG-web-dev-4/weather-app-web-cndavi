@@ -68,7 +68,6 @@ class Page extends Component {
             if (data.cod === 200) {
               this.setState({
                 temperature: data.main.temp,
-                main: data.weather[0].description,
                 description: data.weather[0].description,
                 predictability: data.predictability,
                 city: data.name,
@@ -76,7 +75,7 @@ class Page extends Component {
                 longitude: data.coord.lon,
                 latitude: data.coord.lat,
               })
-              // console.log(data)
+              console.log(data)
             } else {
               throw data.cod
             }

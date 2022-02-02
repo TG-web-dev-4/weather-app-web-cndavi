@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react'
 import styles from './WeatherForecast.module.css'
+import { getDays } from '../../../helpers/helper'
 
-function WeatherForecast({ latitude, longitude }) {
+function WeatherForecast(props) {
+  const { latitude, longitude } = props
   const [forecastData, setForecastData] = useState([])
   const api_key = process.env.REACT_APP_WEATHER_API_KEY
+
+  let dayCounter = -1
+  const weeklyDays = getDays()
 
   useEffect(() => {
     fetch(
@@ -11,25 +16,39 @@ function WeatherForecast({ latitude, longitude }) {
     )
       .then((response) => response.json())
       .then((result) => {
-        setForecastData(result)
-        // console.log(result)
+        setForecastData(result.daily)
+        console.log(result.daily)
+      })
+      .catch((error) => {
+        console.log(error)
       })
   }, [latitude, longitude])
 
-  console.log(forecastData)
-
   return (
     <div className={styles.ForecastWrapper}>
-      <div className={styles.ForecastItem}>
-        <div className={styles.Day}>Monday</div>
-        <img
-          src={require(`../../../assets/clear sky.svg`).default}
-          className={styles.Icon}
-        />
-        <div className={styles.Temperature}>
-          30<span>&deg;C &nbsp;</span>
-        </div>
-      </div>
+      {forecastData.map((data, key) => {
+        dayCounter = dayCounter + 1
+        return (
+          <>
+            <div className={styles.ForecastItem}>
+              <div className={styles.Day}>{dayCounter === 0}</div>
+              <div className={styles.Icon}>
+                <img
+                  src={require(`../../../assets/${data.weather[0].description}.svg`)}
+                />
+              </div>
+              <span className={styles.Day}>{weeklyDays[dayCounter]}</span>
+              <div className={styles.Temperature}>
+                <span>{Math.round(data.temp.day)}&deg;C &nbsp;</span>
+              </div>
+              <div className={styles.Description}>
+                {data.weather[0].description}
+              </div>
+            </div>
+            <hr />
+          </>
+        )
+      })}
     </div>
   )
 }
