@@ -14,13 +14,13 @@ import Footer from '../components/Footer/Footer'
 class Page extends Component {
   state = {
     searchBarInput: '',
-    temperature: '',
-    description: '',
-    predictability: '',
-    city: '',
-    country: '',
-    longitude: '',
-    latitude: '',
+    // temperature: '',
+    // description: '',
+    // predictability: '',
+    // city: '',
+    // country: '',
+    // longitude: '',
+    // latitude: '',
     error: false,
   }
 
@@ -94,13 +94,13 @@ class Page extends Component {
     let currentWeather = <Preview />
     if (this.state.error) {
       currentWeather = <ErrorNotice onClickHandler={this.tryAgainHandler} />
-    } else if (this.state.temperature !== '') {
+    } else if (this.state?.temperature) {
       currentWeather = (
         <WeatherCurrent
-          temperature={this.state.temperature}
-          description={this.state.description}
-          city={this.state.city}
-          country={this.state.country}
+          temperature={this.state?.temperature}
+          description={this.state?.description}
+          city={this.state?.city}
+          country={this.state?.country}
         />
       )
     }
@@ -108,15 +108,15 @@ class Page extends Component {
     let forecastWeather = <Preview />
     if (this.state.error) {
       forecastWeather = <ErrorNotice onClickHandler={this.tryAgainHandler} />
-    } else if (this.state.temperature !== '') {
+    } else if (this.state?.temperature) {
       forecastWeather = (
         <WeatherForecast
-          temperature={this.state.temperature}
-          description={this.state.description}
-          city={this.state.city}
-          country={this.state.country}
-          latitude={this.state.latitude}
-          longitude={this.state.longitude}
+          temperature={this.state?.temperature}
+          description={this.state?.description}
+          city={this.state?.city}
+          country={this.state?.country}
+          latitude={this.state?.latitude}
+          longitude={this.state?.longitude}
         />
       )
     }
@@ -126,9 +126,9 @@ class Page extends Component {
         <Header />
         <SearchBar
           weatherMethod={this.fetchWeather}
-          value={this.state.searchBarInput}
+          value={this.state?.searchBarInput}
           onChangeHandler={this.searchBarHandler}
-          error={this.state.error}
+          error={this.state?.error}
         />
         <div className={styles.PageWrapper}>
           <Image />
